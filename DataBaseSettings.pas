@@ -200,19 +200,11 @@ begin
 end;
 
 procedure TfrmDataBaseSettings.DataBaseCtrl;
-
-  function NewPersistCtrl(ACtrl: TControl;
-    AShortCut: string): TPersistentCtrl;
-  begin
-    Result          := TPersistentCtrl.Create(ACtrl);
-    Result.ShortCut := TextToShortCut(AShortCut);
-  end;
-
 begin
   FDataBaseCtrl := TPersistentMain.Create(Self);
-  FDataBaseCtrl.AddCtrl(NewPersistCtrl(btnAdd, 'Ctrl+Ins'));
-  FDataBaseCtrl.AddCtrl(NewPersistCtrl(btnEdit, 'Ctrl+Enter'));
-  FDataBaseCtrl.AddCtrl(NewPersistCtrl(btnRemove, 'Ctrl+Del'));
+  FDataBaseCtrl.AddCtrl(btnAdd, 'Ctrl+Ins');
+  FDataBaseCtrl.AddCtrl(btnEdit, 'Ctrl+Enter');
+  FDataBaseCtrl.AddCtrl(btnRemove, 'Ctrl+Del');
 end;
 
 function TfrmDataBaseSettings.DataBaseSelected: string;

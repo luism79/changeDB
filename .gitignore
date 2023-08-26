@@ -1,0 +1,20 @@
+# exclude everything except directory foo/bar
+# /*
+# !/foo
+# /foo/*
+# !/foo/bar
+
+__history/
+__recovery/
+
+/bin/
+*/img
+
+*.dproj.*
+*.*res
+*.identcache
+*.*cfg
+*.stat
+*.rc
+*.dcu
+*.txt

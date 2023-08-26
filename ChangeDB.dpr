@@ -2,10 +2,10 @@ program ChangeDB;
 
 uses
   Vcl.Forms,
-  SystemUtils in '..\..\_components\Source\Lib\SystemUtils.pas',
   Vcl.Themes,
   Vcl.Styles,
   main in 'main.pas' {frmMain},
+  SystemUtils in '..\..\..\_Components\SMComponents\source\Lib\SystemUtils.pas',
   Model.crCustomBase in 'model\Model.crCustomBase.pas',
   Model.crCustomObject in 'model\Model.crCustomObject.pas',
   Model.crCustomDB in 'model\Model.crCustomDB.pas',

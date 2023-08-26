@@ -16,12 +16,13 @@ type
     procedure DoKeyDown(var Message: TWMKey);
     function FindShortCut(var Msg: TWMKey; var AControl: TPersistentCtrl): Boolean;
     function MessageHook(var Message: TMessage): Boolean;
+    function AddPersisteCtrl(ACtrl: TControl; AShortCut: string): TPersistentCtrl;
   protected
   public
     constructor Create(AOwnerForm: TCustomForm; AControl: TControl = nil); reintroduce;
     destructor Destroy; override;
 
-    procedure AddCtrl(ACtrl: TPersistentCtrl);
+    procedure AddCtrl(ACtrl: TControl; AShortCut: string);
   end;
 
 
@@ -29,9 +30,16 @@ implementation
 
 { TPersistentMain }
 
-procedure TPersistentMain.AddCtrl(ACtrl: TPersistentCtrl);
+procedure TPersistentMain.AddCtrl(ACtrl: TControl; AShortCut: string);
 begin
-  FListCtrls.Add(ACtrl);
+  FListCtrls.Add(AddPersisteCtrl(ACtrl, AShortCut));
+end;
+
+function TPersistentMain.AddPersisteCtrl(ACtrl: TControl;
+  AShortCut: string): TPersistentCtrl;
+begin
+  Result := TPersistentCtrl.Create(ACtrl);
+  Result.ShortCut := TextToShortCut(AShortCut);
 end;
 
 constructor TPersistentMain.Create(AOwnerForm: TCustomForm;

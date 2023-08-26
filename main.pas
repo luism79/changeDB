@@ -176,25 +176,18 @@ end;
 
 procedure TfrmMain.AddCtrlPersistet;
 
-  function NewPersistCtrl(ACtrl: TControl;
-    AShortCut: string): TPersistentCtrl;
-  begin
-    Result          := TPersistentCtrl.Create(ACtrl);
-    Result.ShortCut := TextToShortCut(AShortCut);
-  end;
-
   procedure ServerCtrl;
   begin
     FServerCtrl := TPersistentMain.Create(Self, cbServer);
-    FServerCtrl.AddCtrl(NewPersistCtrl(btnDelServer, 'Ctrl+Del'));
+    FServerCtrl.AddCtrl(btnDelServer, 'Ctrl+Del');
   end;
 
   procedure DataBaseCtrl;
   begin
     FDataBaseCtrl := TPersistentMain.Create(Self, cbDataBase);
-    FDataBaseCtrl.AddCtrl(NewPersistCtrl(btnAddDB, 'Ctrl+Ins'));
-    FDataBaseCtrl.AddCtrl(NewPersistCtrl(btnEditDB, 'Ctrl+Enter'));
-    FDataBaseCtrl.AddCtrl(NewPersistCtrl(btnDelDB, 'Ctrl+Del'));
+    FDataBaseCtrl.AddCtrl(btnAddDB, 'Ctrl+Ins');
+    FDataBaseCtrl.AddCtrl(btnEditDB, 'Ctrl+Enter');
+    FDataBaseCtrl.AddCtrl(btnDelDB, 'Ctrl+Del');
   end;
 
 begin

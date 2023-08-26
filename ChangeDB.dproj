@@ -112,12 +112,12 @@
         <DCC_ExeOutput>.\bin</DCC_ExeOutput>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <Icon_MainIcon>images\database.ico</Icon_MainIcon>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=2.1.0.6;InternalName=;LegalCopyright=Luis A. M.;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=2.1.0;Comments=luis_adriano76@hotmail.com</VerInfo_Keys>
         <VerInfo_MajorVer>2</VerInfo_MajorVer>
         <VerInfo_MinorVer>1</VerInfo_MinorVer>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <VerInfo_Build>6</VerInfo_Build>
+        <DCC_DcuOutput>.\bin\$(Platform)\$(Config)</DCC_DcuOutput>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -137,11 +137,11 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="..\..\_components\Source\Lib\SystemUtils.pas"/>
         <DCCReference Include="main.pas">
             <Form>frmMain</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="..\..\..\_Components\SMComponents\source\Lib\SystemUtils.pas"/>
         <DCCReference Include="model\Model.crCustomBase.pas"/>
         <DCCReference Include="model\Model.crCustomObject.pas"/>
         <DCCReference Include="model\Model.crCustomDB.pas"/>
@@ -163,11 +163,9 @@
         <DCCReference Include="controller\Controller.crServer.pas"/>
         <DCCReference Include="Settings.pas">
             <Form>frmSettings</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="DataBaseSettings.pas">
             <Form>frmDataBaseSettings</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="controller\Controller.crFileZeos.pas"/>
         <DCCReference Include="model\Interface\Model.IActionDataBase.pas"/>
@@ -176,7 +174,6 @@
         </DCCReference>
         <DCCReference Include="DataBase.pas">
             <Form>frmDataBase</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="helper\Helper.PersistentCtrl.pas"/>
         <DCCReference Include="helper\Helper.PersistentMain.pas"/>
@@ -185,7 +182,6 @@
         <DCCReference Include="model\Interface\Model.IActionListObjects.pas"/>
         <DCCReference Include="WinDefault\CustomWindow.pas">
             <Form>frmCustomWin</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
