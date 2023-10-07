@@ -12,7 +12,7 @@ uses
   Vcl.ActnList, Vcl.PlatformDefaultStyleActnCtrls, Vcl.ActnMan,
   WindowDefault, Controller.crChangeDB, Model.crCustomBase,
   Model.crCustomObject, Model.crCustomDataBase, Model.crCustomListObject,
-  Model.crCustomServer, Helper.PersistentMain;
+  Model.crCustomServer, Helper.PersistentMain, Teste2;
 
 type
   TfrmMain = class(TfrmWinDefault)
